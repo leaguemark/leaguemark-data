@@ -1,6 +1,6 @@
 # Leaguemark Schema
 
-**Version 1.0** · Published 1 November 2026 · Read with the Leaguemark Rulebook v1.0.1
+**Version 1.0.1** · Published 8 November 2026 · Read with the Leaguemark Rulebook v1.0.1. Version 1.0 differs only in the fields added in sections 3.1, 3.2, 3.4 and 3.6 (see Changes)
 Licence: © Leaguemark, all rights reserved; covered by the data use and citation policy (until it is published, contact hello@leaguemark.io before reusing anything here) · Repository: github.com/leaguemark/leaguemark-data
 
 This schema lists the records Leaguemark keeps about the business of NBA Europe, the fields on each, and the exact field names we use. The change log records every change under one of these field names, so the same kind of fact is always filed the same way. The IDs, statuses and sourcing rules are set by the Rulebook; this document doesn't repeat them.
@@ -63,6 +63,7 @@ A **market slot** is the permanent place for a city (NBE-LON for London). It exi
 | Ownership split | Shares held by NBA team owners and by the permanent team owners | Percent, per holder | League structure / rules |
 | Loss funding | Who funds start-up losses, and for how long | Text | League structure / rules |
 | Franchise fee sharing | How franchise fees are distributed | Text | League structure / rules |
+| League investment | Money a founding party (such as the NBA or FIBA) has committed to building the league itself; one per row | Money, the period it covers and the party committing it | Valuation / deal terms |
 | Sale process | How franchises are sold (order, method) | Text | League structure / rules |
 | Sale adviser | Bank or firm running the sale; one per row | Company ID | Other |
 | Award timing | When franchise awards are expected or due | Date or text | Date |
@@ -81,6 +82,7 @@ A **market slot** is the permanent place for a city (NBE-LON for London). It exi
 | Franchise status | Where the city's franchise stands | Bidding, Front-runner identified, Awarded, Ratified, Active | League structure / rules |
 | Bidder | A person, company or group bidding for the franchise; one per row | Person or company ID | Bidder / consortium |
 | Front-runner | The bidder reported or announced as preferred | Person or company ID | Bidder / consortium |
+| Interested party | A person, company or group publicly interested in the slot, or reported as a target for it, with no bid reported; one per row. When a bid is reported, it gets a Bidder row; this row stays as history | Person or company ID, and which way the interest runs (the party wants the slot, or the league wants the party) | Bidder / consortium |
 | Franchise fee | Price paid or offered for the franchise | Money | Valuation / deal terms |
 | Award date | When the franchise was awarded | Date | Date |
 | Ratification date | When the owner was approved by the league | Date | Date |
@@ -120,6 +122,7 @@ A **market slot** is the permanent place for a city (NBE-LON for London). It exi
 | Projection | As for League | Text; always an attributed statement | Statement |
 | Plan | For a league body or club: an announced plan, format or expansion | Text, date where stated | League structure / rules |
 | Member terms | For a league body: terms that bind its member clubs (licences, franchise agreements, exit terms) | Text, money where stated | Valuation / deal terms |
+| Financially sustainable clubs | For a league body: the share or number of its member clubs that are financially sustainable, as the source defines it | Percent or count, the date it applies to, and the source's definition | Figure |
 | Crosswalk codes | See section 5 | | Registry fact |
 
 ### 3.5 Person (PE-0001)
@@ -143,6 +146,7 @@ We hold public professional information only: name, role, employer, dates and pu
 | Operator | | Company ID | Other |
 | Other tenant | One per row | Company ID | Other |
 | Arena kind | Existing, temporary or new build | Text | Other |
+| Project stage | For an arena being built or planned: how far the project has got | Planned, Approved, Under construction or Open, with the date that stage was reached | Other |
 | Opening year | | Year | Date |
 | Address and location | | Text, latitude and longitude | Other |
 | Training facility | | Text | Other |
@@ -210,3 +214,8 @@ A crosswalk code is a registry fact with its own source. It never replaces our I
 Added in a later version when subscribers or pilot agencies ask for them: deal values and end dates of partnerships; agencies that brokered deals; suppliers per service; hiring signals; follower history; revenue estimates; hospitality inventory; full staff charts and career histories; player records; a comparables table of franchise sales in other leagues.
 
 Adding fields or record types is a clarification under Rulebook 8.2, because it can't change any existing row's status or score. Renaming or removing a field is a rule change.
+
+## Changes
+
+- **v1.0.1 (8 November 2026), clarification (Rulebook 8.2):** adds the League field "League investment" (section 3.1), the Market slot field "Interested party" (section 3.2), the Company field "Financially sustainable clubs" (section 3.4) and the Arena field "Project stage" (section 3.6). No field renamed or removed.
+- **v1.0 (1 November 2026):** first published version.
