@@ -1,6 +1,6 @@
 # Leaguemark Schema
 
-**Version 1.0.1** · Published 8 November 2026 · Read with the Leaguemark Rulebook v1.0.1. Version 1.0 differs only in the fields added in sections 3.1, 3.2, 3.4 and 3.6 (see Changes)
+**Version 1.0.2** · Published 22 November 2026 · Read with the Leaguemark Rulebook v1.0.1. Earlier versions differ only in the fields added since (see Changes)
 Licence: © Leaguemark, all rights reserved; covered by the data use and citation policy (until it is published, contact hello@leaguemark.io before reusing anything here) · Repository: github.com/leaguemark/leaguemark-data
 
 This schema lists the records Leaguemark keeps about the business of NBA Europe, the fields on each, and the exact field names we use. The change log records every change under one of these field names, so the same kind of fact is always filed the same way. The IDs, statuses and sourcing rules are set by the Rulebook; this document doesn't repeat them.
@@ -68,6 +68,7 @@ A **market slot** is the permanent place for a city (NBE-LON for London). It exi
 | Sale adviser | Bank or firm running the sale; one per row | Company ID | Other |
 | Award timing | When franchise awards are expected or due | Date or text | Date |
 | Media rights partner | Broadcaster or platform; one per row | Company ID | Sponsor / partner |
+| Partners announced | Whether the league has announced any league-level sponsor or commercial partner, with the date it was checked. Each announced deal is its own Partnership record (section 4.4); this field records only the checked state | Text, with the date checked | Sponsor / partner |
 | Negotiation | A negotiation with another organisation, and its current state | Organisation ID + text | League structure / rules |
 | Offer | Terms of an offer made or received | Organisation ID + text, money where stated | Valuation / deal terms |
 | Projection | A figure or outcome the league has projected | Text, money where stated; always an attributed statement | Statement |
@@ -123,6 +124,7 @@ A **market slot** is the permanent place for a city (NBE-LON for London). It exi
 | Plan | For a league body or club: an announced plan, format or expansion | Text, date where stated | League structure / rules |
 | Member terms | For a league body: terms that bind its member clubs (licences, franchise agreements, exit terms) | Text, money where stated | Valuation / deal terms |
 | Financially sustainable clubs | For a league body: the share or number of its member clubs that are financially sustainable, as the source defines it | Percent or count, the date it applies to, and the source's definition | Figure |
+| Reported value | A published estimate of the company's value, with its publisher and date; never our own. Same meaning as Team season's Reported value (4.1); one per row | Money + outlet ID + date | Valuation / deal terms |
 | Crosswalk codes | See section 5 | | Registry fact |
 
 ### 3.5 Person (PE-0001)
@@ -147,6 +149,7 @@ We hold public professional information only: name, role, employer, dates and pu
 | Other tenant | One per row | Company ID | Other |
 | Arena kind | Existing, temporary or new build | Text | Other |
 | Project stage | For an arena being built or planned: how far the project has got | Planned, Approved, Under construction or Open, with the date that stage was reached | Other |
+| Hosting position | The owner's or operator's stated position on hosting an NBA Europe team (for example available, in talks, ruled out); one per row | Text, with the date it was stated | Other |
 | Opening year | | Year | Date |
 | Address and location | | Text, latitude and longitude | Other |
 | Training facility | | Text | Other |
@@ -217,5 +220,6 @@ Adding fields or record types is a clarification under Rulebook 8.2, because it 
 
 ## Changes
 
+- **v1.0.2 (22 November 2026), clarification (Rulebook 8.2):** adds the Company field "Reported value" (section 3.4), with the same meaning as the Team season field of that name (section 4.1), the Arena field "Hosting position" (section 3.6) and the League field "Partners announced" (section 3.1). No field renamed or removed.
 - **v1.0.1 (8 November 2026), clarification (Rulebook 8.2):** adds the League field "League investment" (section 3.1), the Market slot field "Interested party" (section 3.2), the Company field "Financially sustainable clubs" (section 3.4) and the Arena field "Project stage" (section 3.6). No field renamed or removed.
 - **v1.0 (1 November 2026):** first published version.
