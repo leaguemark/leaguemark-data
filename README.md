@@ -2,7 +2,7 @@
 
 Public schema, IDs and weekly change-log hashes for **Leaguemark**, the dated record of who owns, pays for and runs new sports leagues. First edition: NBA Europe.
 
-Website: https://leaguemark.io (launching 23 November 2026)
+Website: https://leaguemark.io (launching 30 November 2026)
 
 ## What will be here
 
